@@ -1,8 +1,15 @@
 public class Produto {
+    
     private String Nome;
     private Double Valor;
     private Double Peso;
-
+    
+    public Produto(String nome, Double valor, Double peso) {
+        Nome = nome;
+        Valor = valor;
+        Peso = peso;
+    }
+    
     public Double getPeso() {
         return Peso;
     }
