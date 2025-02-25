@@ -1,4 +1,3 @@
-package Trabalho01.testes;
 
 import org.junit.Test;
 

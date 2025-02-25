@@ -1,4 +1,4 @@
-public class EcomendaSedex  implements EntregaStrategy {
+public class EcomendaSedex implements EntregaStrategy {
     @Override
     public Double CalculaFrete(double pesoTotalGramas) {
 
@@ -15,8 +15,10 @@ public class EcomendaSedex  implements EntregaStrategy {
             return 45.0;
 
         double excessoPeso = pesoTotalGramas - 2000;
-        double adicionalPeso = Math.ceil(excessoPeso * 10) * 1.5;
-        return 46.5 +  adicionalPeso;
-        
+        double adicionalPeso = Math.ceil(excessoPeso / 100) * 1.5;
+        double total = adicionalPeso + 46.5;
+
+        return total;
+
     }
 }
