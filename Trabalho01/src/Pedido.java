@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Pedido {
     public ArrayList<Produto> produtos = new ArrayList<>();
@@ -11,10 +8,10 @@ public class Pedido {
         FormaEntrega = formaEntrega;
     }
 
-    public Double FecharPedido(){
+    public Double gerarValorTotalDoPagamento(){
         try{
-            Double totalValorProdutos = CalcularValorProdutoTotal();
-            Double totalValorFrete = ProcessarFrete();
+            Double totalValorProdutos = calcularValorProdutoTotal();
+            Double totalValorFrete = processarFrete();
 
             Double valorTotalAPagar = totalValorFrete + totalValorProdutos;
 
@@ -26,25 +23,25 @@ public class Pedido {
         }
     }
 
-    private Double CalcularValorProdutoTotal(){
+    private Double calcularValorProdutoTotal(){
         Double somaTotalValor = produtos.stream()
                 .mapToDouble(Produto::getValor).sum();
 
         return somaTotalValor;
     }
 
-    public void AdicionarProduto(Produto produto){
+    public void adicionarProduto(Produto produto){
         produtos.add(produto);
     }
 
-    private Double ProcessarFrete(){
-        Double pesoTotalPedidos = CalcularPesoTotal();
+    private Double processarFrete(){
+        Double pesoTotalPedidos = calcularPesoTotal();
         Double valorFrete = FormaEntrega.CalculaFrete(pesoTotalPedidos);
 
         return valorFrete;
     }
 
-    private Double CalcularPesoTotal(){
+    private Double calcularPesoTotal(){
         Double somaTotalPeso = produtos.stream()
                 .mapToDouble(Produto::getPeso).sum();
 

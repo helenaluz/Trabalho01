@@ -1,3 +1,3 @@
 public interface EntregaStrategy {
-    Double CalculaFrete(double peso);
+    Double CalculaFrete(double pesoTotalGramas);
 }
