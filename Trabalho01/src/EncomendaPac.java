@@ -1,4 +1,4 @@
-public class EcomendaPac  implements EntregaStrategy {
+public class EncomendaPac  implements EntregaStrategy {
     @Override
     public Double CalculaFrete(double pesoTotalGramas) {
         

@@ -4,10 +4,10 @@ import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
-public class EcomendaSedexTest {
+public class EncomendaSedexTest {
     @Test
     public void testCalculaFrete() {
-        EntregaStrategy entrega = new EcomendaSedex();
+        EntregaStrategy entrega = new EncomendaSedex();
 
         assertEquals(12.5, (double) entrega.CalculaFrete(500), 0.001);
         assertEquals(20.0, (double) entrega.CalculaFrete(600), 0.001);

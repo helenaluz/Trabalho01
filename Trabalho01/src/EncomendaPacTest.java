@@ -4,10 +4,10 @@ import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
-public class EcomendaPacTest {
+public class EncomendaPacTest {
     @Test
     public void testCalculaFreteValorInvalido() {
-        EntregaStrategy entrega = new EcomendaPac();
+        EntregaStrategy entrega = new EncomendaPac();
 
         assertEquals(10.0, (double) entrega.CalculaFrete(500), 0.001);
         assertEquals(15.0, (double) entrega.CalculaFrete(1500), 0.001);

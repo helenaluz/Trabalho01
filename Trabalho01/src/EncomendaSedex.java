@@ -1,4 +1,4 @@
-public class EcomendaSedex implements EntregaStrategy {
+public class EncomendaSedex implements EntregaStrategy {
     @Override
     public Double CalculaFrete(double pesoTotalGramas) {
 

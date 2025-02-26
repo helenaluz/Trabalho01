@@ -10,7 +10,7 @@ public class PedidoTest {
 
     @Test
     public void testGerarValorTotalDoPagamento() {
-        EcomendaPac ecomenda1 = new EcomendaPac();
+        EncomendaPac ecomenda1 = new EncomendaPac();
         Produto produto1 = new Produto("xurastei", 10.0, 250.0);
         Produto produto2 = new Produto("mingau", 2.0, 250.0);
         Produto produto3 = new Produto("lapiseira", 30.0, 250.0);
@@ -29,7 +29,7 @@ public class PedidoTest {
 
     @Test
     public void testGerarValorTotalDoPagamento2() {
-        EcomendaSedex ecomenda1 = new EcomendaSedex();
+        EncomendaSedex ecomenda1 = new EncomendaSedex();
         Produto produto1 = new Produto("pamplona nao te abandona", 10.0, 250.0);
         Produto produto2 = new Produto("boliña de golfe", 2.0, 7000.0);
         Produto produto3 = new Produto("pinacolada", 30.0, 750.0);
