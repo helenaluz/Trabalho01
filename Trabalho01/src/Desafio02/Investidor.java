@@ -22,6 +22,11 @@ public class Investidor implements Observador{
         this.nome = nome;
     }
 
+    public List<Acao> getAcoesNotificao() {
+        return acoesNotificao;
+    }
+    
+
     @Override
     public void update(Acao acao) {
         verificarNotificao(acao);
