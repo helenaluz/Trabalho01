@@ -7,25 +7,28 @@ public class Investidor implements Observador{
     private String nome;
     private ArrayList<OrdemPreProgramada> ordensPreProgramadas;
     private ArrayList<Acao> acoesNotificao ;
-
+    
     public Investidor(String nome) {
         this.nome = nome;
         this.ordensPreProgramadas = new ArrayList<>();
         this.acoesNotificao = new ArrayList<>();
     }
-
+    
     public String getNome() {
         return nome;
     }
-
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     public List<Acao> getAcoesNotificao() {
         return acoesNotificao;
     }
     
+    public ArrayList<OrdemPreProgramada> getOrdensPreProgramadas() {
+        return ordensPreProgramadas;
+    }
 
     @Override
     public void update(Acao acao) {
