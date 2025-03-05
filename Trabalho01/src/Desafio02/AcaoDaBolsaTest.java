@@ -1,5 +1,6 @@
 package Desafio02;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,17 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class AcaoTest {
-    private Acao acao;
+public class AcaoDaBolsaTest {
+    private AcaoDaBolsa acao;
     private Observador observador;
     private Ordem ordem;   
     
     @BeforeEach
     void setUp() {
-        acao = new Acao("PETR4", 25.0);
+        acao = new AcaoDaBolsa("PETR4", 25.0);
         observador = new Observador() {
             @Override
-            public void update(Acao acao) {
+            public void atualizar(AcaoDaBolsa acao) {
                 System.out.println("Observador foi notificado sobre mudança na ação: " + acao.getNome());
             }
         };
@@ -54,4 +55,12 @@ public class AcaoTest {
         assertEquals("Esse observador não está na lista de observadores", exception.getMessage());
     }
 
+    @Test
+    void testRemoverOrdensDaAcaoQuandoTiverMatch() {
+        acao.registrarOrdem(ordem);
+        ordem = new Ordem(new Investidor("Maria"), TipoOrdem.Venda, 25.0);
+        acao.registrarOrdem(ordem);
+        
+        assertTrue(acao.getOrdens().isEmpty());
+    }
 }

@@ -11,17 +11,17 @@ import org.junit.jupiter.api.Test;
 public class InvestidorTest {
 
     private Investidor investidor;
-    private Acao acao;
+    private AcaoDaBolsa acao;
 
     @BeforeEach
     void setUp() {
         investidor = new Investidor("Carlos");
-        acao = new Acao("VALE3", 80.0);
+        acao = new AcaoDaBolsa("VALE3", 80.0);
     }
 
     @Test
     void testAdicionarAcaoNotificao() {
-        investidor.adicionarAcaoNotificao(acao);
+        investidor.seRegistrarEmAcao(acao);
         assertTrue(investidor.getAcoesNotificao().contains(acao));
     }
 
@@ -37,7 +37,7 @@ public class InvestidorTest {
 
     @Test
     void testReceberNotificacaoDeMudancaPreco() {
-        investidor.adicionarAcaoNotificao(acao);
+        investidor.seRegistrarEmAcao(acao);
         acao.atualizarValorAcao(85.0);
         assertTrue(investidor.getAcoesNotificao().contains(acao));
     }

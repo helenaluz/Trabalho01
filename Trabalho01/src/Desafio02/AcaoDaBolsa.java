@@ -2,13 +2,13 @@ package Desafio02;
 
 import java.util.*;
 
-public class Acao {
+public class AcaoDaBolsa implements Sujeito {
     private String nome;
     private double valor;
     private ArrayList<Ordem> ordens;
     private ArrayList<Observador> observadores;
 
-    public Acao(String nome, double valor) {
+    public AcaoDaBolsa(String nome, double valor) {
         this.nome = nome;
         this.valor = valor;
         this.ordens = new ArrayList<>();
@@ -36,6 +36,10 @@ public class Acao {
         verificarMatch();
     }
 
+    public ArrayList<Ordem> getOrdens() {
+        return ordens;
+    }
+
     public void adicionarObservador(Observador observador) {
         observadores.add(observador);
     }
@@ -50,6 +54,10 @@ public class Acao {
         observadores.remove(observador);
     }
 
+    public ArrayList<Observador> getObservadores() {
+        return observadores;
+    }
+
     public void atualizarValorAcao(double valor) {
 
         if (this.valor != valor) {
@@ -58,9 +66,9 @@ public class Acao {
         }
     }
 
-    private void notificarObservadores() {
+    public void notificarObservadores() {
         for (Observador observador : observadores) {
-            observador.update(this);
+            observador.atualizar(this);
         }
     }
 
@@ -89,5 +97,4 @@ public class Acao {
 
         atualizarValorAcao(resultado);
     }
-
 }

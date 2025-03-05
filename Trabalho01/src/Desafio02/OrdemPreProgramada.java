@@ -2,9 +2,9 @@ package Desafio02;
 
 public class OrdemPreProgramada {
     private Ordem ordem;
-    private Acao acao;
+    private AcaoDaBolsa acao;
 
-    public OrdemPreProgramada(Ordem ordem, Acao acao) {
+    public OrdemPreProgramada(Ordem ordem, AcaoDaBolsa acao) {
         this.ordem = ordem;
         this.acao = acao;
     }
@@ -17,11 +17,11 @@ public class OrdemPreProgramada {
         this.ordem = ordem;
     }
 
-    public Acao getAcao() {
+    public AcaoDaBolsa getAcao() {
         return acao;
     }
 
-    public void setAcao(Acao acao) {
+    public void setAcao(AcaoDaBolsa acao) {
         this.acao = acao;
     }
 }

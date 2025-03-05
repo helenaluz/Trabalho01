@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Investidor implements Observador{
     private String nome;
     private ArrayList<OrdemPreProgramada> ordensPreProgramadas;
-    private ArrayList<Acao> acoesNotificao ;
+    private ArrayList<AcaoDaBolsa> acoesNotificao ;
     
     public Investidor(String nome) {
         this.nome = nome;
@@ -22,7 +22,7 @@ public class Investidor implements Observador{
         this.nome = nome;
     }
     
-    public List<Acao> getAcoesNotificao() {
+    public List<AcaoDaBolsa> getAcoesNotificao() {
         return acoesNotificao;
     }
     
@@ -31,33 +31,33 @@ public class Investidor implements Observador{
     }
 
     @Override
-    public void update(Acao acao) {
+    public void atualizar(AcaoDaBolsa acao) {
         verificarNotificao(acao);
         verificarOrdensPreProgramadas(acao);
     }
 
-    public void registrarOrdem(TipoOrdem tipo,Acao acao, double valor){
+    public void registrarOrdem(TipoOrdem tipo,AcaoDaBolsa acao, double valor){
         Ordem ordem = new Ordem(this, tipo,valor);
         acao.registrarOrdem(ordem);
     }
 
-    public void adicionarOrdemPreProgramada(TipoOrdem tipo, Acao acao, double valor){
+    public void adicionarOrdemPreProgramada(TipoOrdem tipo, AcaoDaBolsa acao, double valor){
         Ordem ordem = new Ordem(this, tipo,valor);
         OrdemPreProgramada ordemPreProgramada = new OrdemPreProgramada(ordem,acao);
         ordensPreProgramadas.add(ordemPreProgramada);
     }
 
-    public void adicionarAcaoNotificao(Acao acao){
+    public void seRegistrarEmAcao(AcaoDaBolsa acao){
         acoesNotificao.add(acao);
     }
 
-    private void verificarNotificao(Acao acao){
+    private void verificarNotificao(AcaoDaBolsa acao){
         if(acoesNotificao.stream().anyMatch(p-> p.equals(acao))){
             notificarAcaoMudancaPreco(acao);
         }
     }
 
-    private void verificarOrdensPreProgramadas(Acao acao){
+    private void verificarOrdensPreProgramadas(AcaoDaBolsa acao){
         List<OrdemPreProgramada> ordensPreProgramadasFiltradas = ordensPreProgramadas.stream()
                 .filter(p -> p.getOrdem().getValor() == acao.getValor() && p.getAcao().getNome().equals(acao.getNome()))
                 .collect(Collectors.toList());
@@ -66,7 +66,7 @@ public class Investidor implements Observador{
             enviarOrdemPreProgramada(ordensPreProgramadasFiltradas);
         }    }
 
-    private void notificarAcaoMudancaPreco(Acao acao){
+    private void notificarAcaoMudancaPreco(AcaoDaBolsa acao){
         System.out.println("A ação "+acao.getNome()+" está com valor R$"+acao.getValor());
     }
 
