@@ -47,7 +47,7 @@ public class InvestidorTest {
         investidor.adicionarOrdemPreProgramada(TipoOrdem.Venda, acao, 85.0);
         acao.atualizarValorAcao(85.0);
         List<OrdemPreProgramada> ordens = investidor.getOrdensPreProgramadas();
-        assertTrue(ordens.stream().anyMatch(o -> o.getAcao().equals(acao) && o.getOrdem().getValor() == 85.0));
+        assertTrue(ordens.stream().anyMatch(o -> o.getAcao().equals(acao) && o.getValor() == 85.0));
     }
 
     @Test

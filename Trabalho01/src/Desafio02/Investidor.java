@@ -42,8 +42,7 @@ public class Investidor implements Observador{
     }
 
     public void adicionarOrdemPreProgramada(TipoOrdem tipo, AcaoDaBolsa acao, double valor){
-        Ordem ordem = new Ordem(this, tipo,valor);
-        OrdemPreProgramada ordemPreProgramada = new OrdemPreProgramada(ordem,acao);
+        OrdemPreProgramada ordemPreProgramada = new OrdemPreProgramada(this, tipo, valor, acao);
         ordensPreProgramadas.add(ordemPreProgramada);
     }
 
@@ -59,7 +58,7 @@ public class Investidor implements Observador{
 
     private void verificarOrdensPreProgramadas(AcaoDaBolsa acao){
         List<OrdemPreProgramada> ordensPreProgramadasFiltradas = ordensPreProgramadas.stream()
-                .filter(p -> p.getOrdem().getValor() == acao.getValor() && p.getAcao().getNome().equals(acao.getNome()))
+                .filter(p -> p.getValor() == acao.getValor() && p.getAcao().getNome().equals(acao.getNome()))
                 .collect(Collectors.toList());
 
         if(!ordensPreProgramadasFiltradas.isEmpty()){
@@ -72,7 +71,7 @@ public class Investidor implements Observador{
 
     private void enviarOrdemPreProgramada(List<OrdemPreProgramada> ordensPreProgramadasFiltradas){
         for(OrdemPreProgramada ordemPreProgramada : ordensPreProgramadasFiltradas){
-            ordemPreProgramada.getAcao().registrarOrdem(ordemPreProgramada.getOrdem());
+            ordemPreProgramada.getAcao().registrarOrdem(ordemPreProgramada);
         }
     }
 }
