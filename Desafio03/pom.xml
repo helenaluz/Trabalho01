@@ -8,10 +8,22 @@
     <artifactId>Desafio03</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>br.furb.analise.algoritmos</groupId>
+            <artifactId>LibDispositivosIot</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/LibDispositivosIot-1.0.jar</systemPath>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
     </properties>
+
 
 </project>
