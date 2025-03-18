@@ -19,11 +19,11 @@ public class SmartHomeFacade {
         this.dispositivos = new ArrayList<>();
     }
 
-    public void AdicionarDispositivoPersiana(DispositivoPersiana dispositivoPersiana){
+    public void adicionarDispositivoPersiana(DispositivoPersiana dispositivoPersiana){
         this.dispositivoPersiana.add(dispositivoPersiana);
     }
 
-    public void RemoverDispositivoPersiana(DispositivoPersiana dispositivoPersiana){
+    public void removerDispositivoPersiana(DispositivoPersiana dispositivoPersiana){
         this.dispositivoPersiana.remove(dispositivoPersiana);
     }
 
@@ -43,7 +43,7 @@ public class SmartHomeFacade {
         this.dispositivos.remove(dispositivo);
     }
 
-    public void ModoSono(){
+    public void ativarModoSono(){
         this.dispositivos.forEach(Dispositivo::desligar);
         this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::desligar);
         this.dispositivoPersiana.forEach(p -> {
@@ -55,7 +55,7 @@ public class SmartHomeFacade {
         });
     }
 
-    public void ModoTrabalho(){
+    public void ativarModoTrabalho(){
         this.dispositivos.forEach(Dispositivo::ligar);
         this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::ligar);
         this.dispositivoPersiana.forEach(p -> {
