@@ -1,6 +1,6 @@
 package org.example;
 
 public interface DispositivoPersiana {
-    void Abrir() throws Exception;
-    void Fechar() throws Exception;
+    void abrir() throws Exception;
+    void fechar() throws Exception;
 }

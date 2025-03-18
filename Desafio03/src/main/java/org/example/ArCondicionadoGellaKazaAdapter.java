@@ -11,19 +11,19 @@ public class ArCondicionadoGellaKazaAdapter implements DispositivoArcondicionado
     }
 
     @Override
-    public void AumentarTemperatura() {
+    public void aumentarTemperatura() {
         if(arCondicionadoGellaKaza.estaLigado())
             arCondicionadoGellaKaza.aumentarTemperatura();
     }
 
     @Override
-    public void DiminuirTemperatura() {
+    public void diminuirTemperatura() {
         if(arCondicionadoGellaKaza.estaLigado())
             arCondicionadoGellaKaza.diminuirTemperatura();
     }
 
     @Override
-    public void SetTemperatura(int temperatura) {
+    public void setTemperatura(int temperatura) {
         if(arCondicionadoGellaKaza.estaLigado()){
             int tempAtual = arCondicionadoGellaKaza.getTemperatura();
             int diferencaTemp = temperatura - tempAtual;
@@ -45,13 +45,13 @@ public class ArCondicionadoGellaKazaAdapter implements DispositivoArcondicionado
     }
 
     @Override
-    public void Ligar() {
+    public void ligar() {
         if(!arCondicionadoGellaKaza.estaLigado())
             arCondicionadoGellaKaza.ativar();
     }
 
     @Override
-    public void Desligar() {
+    public void desligar() {
         if(arCondicionadoGellaKaza.estaLigado())
             arCondicionadoGellaKaza.desativar();
     }

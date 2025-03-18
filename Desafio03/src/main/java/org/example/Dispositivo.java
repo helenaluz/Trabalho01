@@ -1,6 +1,6 @@
 package org.example;
 
 public interface Dispositivo {
-    void Ligar();
-    void Desligar();
+    void ligar();
+    void desligar();
 }

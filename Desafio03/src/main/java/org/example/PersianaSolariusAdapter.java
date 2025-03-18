@@ -12,13 +12,13 @@ public class PersianaSolariusAdapter implements DispositivoPersiana{
     }
 
     @Override
-    public void Abrir() {
+    public void abrir() {
         if(!persianaSolarius.estaAberta())
             persianaSolarius.subirPersiana();
     }
 
     @Override
-    public void Fechar() {
+    public void fechar() {
         if(persianaSolarius.estaAberta())
             persianaSolarius.descerPersiana();
     }

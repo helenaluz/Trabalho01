@@ -1,8 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class SmartHomeFacade {
     ArrayList<DispositivoPersiana> dispositivoPersiana;
@@ -46,11 +44,11 @@ public class SmartHomeFacade {
     }
 
     public void ModoSono(){
-        this.dispositivos.forEach(Dispositivo::Desligar);
-        this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::Desligar);
+        this.dispositivos.forEach(Dispositivo::desligar);
+        this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::desligar);
         this.dispositivoPersiana.forEach(p -> {
             try {
-                p.Fechar();
+                p.fechar();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -58,11 +56,11 @@ public class SmartHomeFacade {
     }
 
     public void ModoTrabalho(){
-        this.dispositivos.forEach(Dispositivo::Ligar);
-        this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::Ligar);
+        this.dispositivos.forEach(Dispositivo::ligar);
+        this.dispositivoArcondicionados.forEach(DispositivoArcondicionado::ligar);
         this.dispositivoPersiana.forEach(p -> {
             try {
-                p.Abrir();
+                p.abrir();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -70,6 +68,6 @@ public class SmartHomeFacade {
 
         int tempDesejada = 25;
 
-        this.dispositivoArcondicionados.forEach(p -> p.SetTemperatura(tempDesejada));
+        this.dispositivoArcondicionados.forEach(p -> p.setTemperatura(tempDesejada));
     }
 }

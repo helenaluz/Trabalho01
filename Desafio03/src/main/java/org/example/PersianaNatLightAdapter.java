@@ -11,7 +11,7 @@ public class PersianaNatLightAdapter implements DispositivoPersiana{
     }
 
     @Override
-    public void Abrir() throws Exception {
+    public void abrir() throws Exception {
         if(persianaNatLight.estaPalhetaErguida())
             persianaNatLight.abrirPalheta();
 
@@ -19,7 +19,7 @@ public class PersianaNatLightAdapter implements DispositivoPersiana{
     }
 
     @Override
-    public void Fechar() throws Exception {
+    public void fechar() throws Exception {
         if(persianaNatLight.estaPalhetaErguida())
             persianaNatLight.abrirPalheta();
 

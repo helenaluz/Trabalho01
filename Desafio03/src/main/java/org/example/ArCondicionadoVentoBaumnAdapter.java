@@ -12,31 +12,31 @@ public class ArCondicionadoVentoBaumnAdapter  implements DispositivoArcondiciona
     }
 
     @Override
-    public void AumentarTemperatura() {
+    public void aumentarTemperatura() {
         int tempAtual = arCondicionadoVentoBaumn.getTemperatura();
         int tempDesejada = tempAtual++;
         arCondicionadoVentoBaumn.definirTemperatura(tempDesejada);
     }
 
     @Override
-    public void DiminuirTemperatura() {
+    public void diminuirTemperatura() {
         int tempAtual = arCondicionadoVentoBaumn.getTemperatura();
         int tempDesejada = tempAtual--;
         arCondicionadoVentoBaumn.definirTemperatura(tempDesejada);
     }
 
     @Override
-    public void SetTemperatura(int temperatura) {
+    public void setTemperatura(int temperatura) {
         arCondicionadoVentoBaumn.definirTemperatura(temperatura);
     }
 
     @Override
-    public void Ligar() {
+    public void ligar() {
         arCondicionadoVentoBaumn.ligar();
     }
 
     @Override
-    public void Desligar() {
+    public void desligar() {
         arCondicionadoVentoBaumn.desligar();
     }
 }
