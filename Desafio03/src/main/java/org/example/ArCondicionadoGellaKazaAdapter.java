@@ -4,40 +4,40 @@ import br.furb.analise.algoritmos.ArCondicionadoGellaKaza;
 
 public class ArCondicionadoGellaKazaAdapter implements DispositivoArcondicionado{
 
-    private ArCondicionadoGellaKaza arCondicionado;
+    private ArCondicionadoGellaKaza arCondicionadoGellaKaza;
 
-    public ArCondicionadoGellaKazaAdapter(ArCondicionadoGellaKaza arCondicionado) {
-        this.arCondicionado = arCondicionado;
+    public ArCondicionadoGellaKazaAdapter(ArCondicionadoGellaKaza arCondicionadoGellaKaza) {
+        this.arCondicionadoGellaKaza = arCondicionadoGellaKaza;
     }
 
     @Override
     public void AumentarTemperatura() {
-        if(arCondicionado.estaLigado())
-            arCondicionado.aumentarTemperatura();
+        if(arCondicionadoGellaKaza.estaLigado())
+            arCondicionadoGellaKaza.aumentarTemperatura();
     }
 
     @Override
     public void DiminuirTemperatura() {
-        if(arCondicionado.estaLigado())
-            arCondicionado.diminuirTemperatura();
+        if(arCondicionadoGellaKaza.estaLigado())
+            arCondicionadoGellaKaza.diminuirTemperatura();
     }
 
     @Override
     public void SetTemperatura(int temperatura) {
-        if(arCondicionado.estaLigado()){
-            int tempAtual = arCondicionado.getTemperatura();
+        if(arCondicionadoGellaKaza.estaLigado()){
+            int tempAtual = arCondicionadoGellaKaza.getTemperatura();
             int diferencaTemp = temperatura - tempAtual;
 
             if(diferencaTemp > 0){
                 for(int i = 0; i< diferencaTemp; i++){
-                    arCondicionado.aumentarTemperatura();
+                    arCondicionadoGellaKaza.aumentarTemperatura();
                 }
             }
 
             if(diferencaTemp < 0){
                 diferencaTemp *= -1;
                 for(int i = 0; i< diferencaTemp; i++){
-                    arCondicionado.diminuirTemperatura();
+                    arCondicionadoGellaKaza.diminuirTemperatura();
                 }
             }
 
@@ -46,13 +46,13 @@ public class ArCondicionadoGellaKazaAdapter implements DispositivoArcondicionado
 
     @Override
     public void Ligar() {
-        if(!arCondicionado.estaLigado())
-            arCondicionado.ativar();
+        if(!arCondicionadoGellaKaza.estaLigado())
+            arCondicionadoGellaKaza.ativar();
     }
 
     @Override
     public void Desligar() {
-        if(arCondicionado.estaLigado())
-            arCondicionado.desativar();
+        if(arCondicionadoGellaKaza.estaLigado())
+            arCondicionadoGellaKaza.desativar();
     }
 }
