@@ -11,7 +11,6 @@ class LampadaShoyuMiAdapterTest {
     @Test
     void ligar() {
         LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
-        lampadaShoyuMi.desligar();
         LampadaShoyuMiAdapter lampadaShoyuMiAdapter = new LampadaShoyuMiAdapter(lampadaShoyuMi);
         lampadaShoyuMiAdapter.ligar();
         assertEquals(true, lampadaShoyuMi.estaLigada());
@@ -20,7 +19,6 @@ class LampadaShoyuMiAdapterTest {
     @Test
     void desligar() {
         LampadaShoyuMi lampadaShoyuMi = new LampadaShoyuMi();
-        lampadaShoyuMi.ligar();
         LampadaShoyuMiAdapter lampadaShoyuMiAdapter = new LampadaShoyuMiAdapter(lampadaShoyuMi);
         lampadaShoyuMiAdapter.desligar();
         assertEquals(false, lampadaShoyuMi.estaLigada());

@@ -21,7 +21,7 @@ class LampadaPhellipesAdapterTest {
         LampadaPhellipes lampadaPhellipes = new LampadaPhellipes();
         lampadaPhellipes.setIntensidade(100);
         LampadaPhellipesAdapter lampadaPhellipesAdapter = new LampadaPhellipesAdapter(lampadaPhellipes);
-        lampadaPhellipesAdapter.ligar();
+        lampadaPhellipesAdapter.desligar();
         assertEquals(lampadaPhellipes.getIntensidade(),0);
     }
 }

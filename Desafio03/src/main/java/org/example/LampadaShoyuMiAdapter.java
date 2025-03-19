@@ -13,12 +13,12 @@ public class LampadaShoyuMiAdapter implements Dispositivo{
     @Override
     public void ligar() {
         if(!lampadaShoyuMi.estaLigada())
-            lampadaShoyuMi.desligar();
+            lampadaShoyuMi.ligar();
     }
 
     @Override
     public void desligar() {
         if(lampadaShoyuMi.estaLigada())
-            lampadaShoyuMi.ligar();
+            lampadaShoyuMi.desligar();
     }
 }
