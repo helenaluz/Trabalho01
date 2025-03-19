@@ -12,26 +12,29 @@ class ArCondicionadoGellaKazaAdapterTest {
     void aumentarTemperatura() {
         ArCondicionadoGellaKaza condicionadoGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionadoGellaKazaAdapter condicionadoGellaKazaAdapter = new ArCondicionadoGellaKazaAdapter(condicionadoGellaKaza);
-        condicionadoGellaKazaAdapter.setTemperatura(2);
+        condicionadoGellaKazaAdapter.ligar();
+        condicionadoGellaKazaAdapter.setTemperatura(20);
         condicionadoGellaKazaAdapter.aumentarTemperatura();
-        assertEquals(3, condicionadoGellaKaza.getTemperatura());
+        assertEquals(21, condicionadoGellaKaza.getTemperatura());
     }
 
     @Test
     void diminuirTemperatura() {
         ArCondicionadoGellaKaza condicionadoGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionadoGellaKazaAdapter condicionadoGellaKazaAdapter = new ArCondicionadoGellaKazaAdapter(condicionadoGellaKaza);
-        condicionadoGellaKazaAdapter.setTemperatura(2);
+        condicionadoGellaKazaAdapter.ligar();
+        condicionadoGellaKazaAdapter.setTemperatura(20);
         condicionadoGellaKazaAdapter.diminuirTemperatura();
-        assertEquals(1, condicionadoGellaKaza.getTemperatura());
+        assertEquals(19, condicionadoGellaKaza.getTemperatura());
     }
 
     @Test
     void setTemperatura() {
         ArCondicionadoGellaKaza condicionadoGellaKaza = new ArCondicionadoGellaKaza();
         ArCondicionadoGellaKazaAdapter condicionadoGellaKazaAdapter = new ArCondicionadoGellaKazaAdapter(condicionadoGellaKaza);
-        condicionadoGellaKazaAdapter.setTemperatura(2);
-        assertEquals(2, condicionadoGellaKaza.getTemperatura());
+        condicionadoGellaKazaAdapter.ligar();
+        condicionadoGellaKazaAdapter.setTemperatura(27);
+        assertEquals(27, condicionadoGellaKaza.getTemperatura());
     }
 
     @Test

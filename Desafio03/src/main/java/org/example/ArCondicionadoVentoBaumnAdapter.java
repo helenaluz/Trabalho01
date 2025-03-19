@@ -14,14 +14,14 @@ public class ArCondicionadoVentoBaumnAdapter  implements DispositivoArcondiciona
     @Override
     public void aumentarTemperatura() {
         int tempAtual = arCondicionadoVentoBaumn.getTemperatura();
-        int tempDesejada = tempAtual++;
+        int tempDesejada = tempAtual + 1;
         arCondicionadoVentoBaumn.definirTemperatura(tempDesejada);
     }
 
     @Override
     public void diminuirTemperatura() {
         int tempAtual = arCondicionadoVentoBaumn.getTemperatura();
-        int tempDesejada = tempAtual--;
+        int tempDesejada = tempAtual - 1;
         arCondicionadoVentoBaumn.definirTemperatura(tempDesejada);
     }
 

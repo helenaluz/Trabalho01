@@ -10,27 +10,31 @@ class ArCondicionadoVentoBaumnAdapterTest {
     @Test
     void aumentarTemperatura() {
         ArCondicionadoVentoBaumn arCondicionadoVentoBaumn = new ArCondicionadoVentoBaumn();
-        arCondicionadoVentoBaumn.definirTemperatura(2);
         ArCondicionadoVentoBaumnAdapter arCondicionadoVentoBaumnAdapter = new ArCondicionadoVentoBaumnAdapter(arCondicionadoVentoBaumn);
+        arCondicionadoVentoBaumnAdapter.ligar();
+        arCondicionadoVentoBaumnAdapter.setTemperatura(15);
         arCondicionadoVentoBaumnAdapter.aumentarTemperatura();
-        assertEquals(arCondicionadoVentoBaumn.getTemperatura(), 3);
+        assertEquals(arCondicionadoVentoBaumn.getTemperatura(), 16);
     }
 
     @Test
     void diminuirTemperatura() {
         ArCondicionadoVentoBaumn arCondicionadoVentoBaumn = new ArCondicionadoVentoBaumn();
-        arCondicionadoVentoBaumn.definirTemperatura(2);
         ArCondicionadoVentoBaumnAdapter arCondicionadoVentoBaumnAdapter = new ArCondicionadoVentoBaumnAdapter(arCondicionadoVentoBaumn);
+        arCondicionadoVentoBaumnAdapter.ligar();
+        arCondicionadoVentoBaumnAdapter.setTemperatura(16);
         arCondicionadoVentoBaumnAdapter.diminuirTemperatura();
-        assertEquals(arCondicionadoVentoBaumn.getTemperatura(), 1);
+        assertEquals(arCondicionadoVentoBaumn.getTemperatura(), 15);
     }
 
     @Test
     void setTemperatura() {
         ArCondicionadoVentoBaumn arCondicionadoVentoBaumn = new ArCondicionadoVentoBaumn();
         ArCondicionadoVentoBaumnAdapter arCondicionadoVentoBaumnAdapter = new ArCondicionadoVentoBaumnAdapter(arCondicionadoVentoBaumn);
-        arCondicionadoVentoBaumnAdapter.setTemperatura(2);
-        assertEquals(2, arCondicionadoVentoBaumn.getTemperatura());
+        arCondicionadoVentoBaumnAdapter.ligar();
+
+        arCondicionadoVentoBaumnAdapter.setTemperatura(20);
+        assertEquals(20, arCondicionadoVentoBaumn.getTemperatura());
     }
 
     @Test
